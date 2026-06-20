@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "Blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.hero",
+        "blocks.services",
+        "blocks.cta",
+        "blocks.faq",
+        "blocks.stats",
+        "blocks.content",
+        "blocks.resource-list",
+        "blocks.documentation-list",
+        "blocks.blog-list",
+        "blocks.case-study-list",
+        "blocks.contact-form"
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_global_navbars",
+  "info": {
+    "displayName": "Navbar"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "component",
+      "component": "shared.logolink",
+      "repeatable": false
+    },
+    "navitem": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    },
+    "variants": {
+      "type": "enumeration",
+      "enum": [
+        "Default",
+        "Glass",
+        "Dark",
+        "Transparent"
+      ]
+    }
+  },
+  "config": {}
+}

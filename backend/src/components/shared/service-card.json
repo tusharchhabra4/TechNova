@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_service_cards",
+  "info": {
+    "displayName": "service-card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "buttons": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
+    },
+    "image": {
+      "type": "component",
+      "component": "shared.image",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

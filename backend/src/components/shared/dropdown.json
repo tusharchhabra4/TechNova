@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_dropdowns",
+  "info": {
+    "displayName": "dropdown"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

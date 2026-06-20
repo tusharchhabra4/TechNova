@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_blocks_resource_lists",
+  "info": {
+    "displayName": "resource-list"
+  },
+  "options": {},
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "resources": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::resource.resource"
+    },
+    "variants": {
+      "type": "enumeration",
+      "enum": [
+        "List",
+        "Grid"
+      ]
+    }
+  },
+  "config": {}
+}

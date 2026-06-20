@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_quicklinks",
+  "info": {
+    "displayName": "Quicklinks"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "footlink": {
+      "type": "component",
+      "component": "shared.footlink",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

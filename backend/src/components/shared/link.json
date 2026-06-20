@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_links",
+  "info": {
+    "displayName": "link"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "Navdropdown": {
+      "type": "component",
+      "component": "shared.dropdown",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

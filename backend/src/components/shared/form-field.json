@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_shared_form_fields",
+  "info": {
+    "displayName": "Form Field"
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "email",
+        "phone number",
+        "textarea"
+      ]
+    },
+    "Placeholder": {
+      "type": "string"
+    },
+    "Required": {
+      "type": "boolean"
+    },
+    "HalfWidth": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_blocks_contact_forms",
+  "info": {
+    "displayName": "contact-form"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "formfields": {
+      "type": "component",
+      "component": "shared.form-field",
+      "repeatable": true
+    },
+    "successMessage": {
+      "type": "string"
+    },
+    "submitButtonText": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

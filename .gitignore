@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.local
+
+# Next.js
+.next/
+
+# Strapi
+.strapi/
+
+# Logs
+*.log
+
+# Mac
+.DS_Store
+
+# Build folders
+dist/
+build/
+coverage/

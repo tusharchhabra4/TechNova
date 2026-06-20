@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_shared_images",
+  "info": {
+    "displayName": "Image"
+  },
+  "options": {},
+  "attributes": {
+    "alt": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "variants": {
+      "type": "enumeration",
+      "enum": [
+        "Default",
+        "Rounded",
+        "Circle",
+        "Hero"
+      ]
+    }
+  },
+  "config": {}
+}

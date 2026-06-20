@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_blocks_blog_lists",
+  "info": {
+    "displayName": "blog-list"
+  },
+  "options": {},
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "variants": {
+      "type": "enumeration",
+      "enum": [
+        "Grid",
+        "Featured",
+        "Minimal"
+      ]
+    },
+    "blogs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog.blog"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_blocks_faqs",
+  "info": {
+    "displayName": "faq"
+  },
+  "options": {},
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "variants": {
+      "type": "enumeration",
+      "enum": [
+        "Accordion",
+        "Simple",
+        "TwoColumn"
+      ]
+    },
+    "items": {
+      "type": "component",
+      "component": "shared.faq-card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

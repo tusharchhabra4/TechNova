@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_global_footers",
+  "info": {
+    "displayName": "footer"
+  },
+  "options": {},
+  "attributes": {
+    "footlogo": {
+      "type": "component",
+      "component": "shared.logolink",
+      "repeatable": false
+    },
+    "link": {
+      "type": "component",
+      "component": "shared.quicklinks",
+      "repeatable": true
+    },
+    "sociallink": {
+      "type": "component",
+      "component": "shared.sociallink",
+      "repeatable": true
+    },
+    "copyright": {
+      "type": "component",
+      "component": "shared.copyright",
+      "repeatable": false
+    },
+    "variants": {
+      "type": "enumeration",
+      "enum": [
+        "Default",
+        "Dark",
+        "Minimal"
+      ]
+    }
+  },
+  "config": {}
+}
