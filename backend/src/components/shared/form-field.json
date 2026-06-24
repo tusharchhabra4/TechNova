@@ -16,8 +16,13 @@
       "enum": [
         "text",
         "email",
+        "textarea",
         "phone number",
-        "textarea"
+        "url",
+        "number",
+        "date",
+        "password",
+        "select"
       ]
     },
     "Placeholder": {
@@ -28,6 +33,32 @@
     },
     "HalfWidth": {
       "type": "boolean"
+    },
+    "MinLength": {
+      "type": "integer"
+    },
+    "MaxLength": {
+      "type": "integer"
+    },
+    "ErrorMessage": {
+      "type": "string"
+    },
+    "Pattern": {
+      "type": "string"
+    },
+    "RequiredMessage": {
+      "type": "string"
+    },
+    "MinLengthMessage": {
+      "type": "string"
+    },
+    "MaxLengthMessage": {
+      "type": "string"
+    },
+    "Options": {
+      "type": "component",
+      "component": "shared.option",
+      "repeatable": true
     }
   },
   "config": {}

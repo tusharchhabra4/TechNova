@@ -258,13 +258,31 @@ export interface SharedFormField extends Struct.ComponentSchema {
     displayName: 'Form Field';
   };
   attributes: {
+    ErrorMessage: Schema.Attribute.String;
     HalfWidth: Schema.Attribute.Boolean;
     Label: Schema.Attribute.String;
+    MaxLength: Schema.Attribute.Integer;
+    MaxLengthMessage: Schema.Attribute.String;
+    MinLength: Schema.Attribute.Integer;
+    MinLengthMessage: Schema.Attribute.String;
     Name: Schema.Attribute.String;
+    Options: Schema.Attribute.Component<'shared.option', true>;
+    Pattern: Schema.Attribute.String;
     Placeholder: Schema.Attribute.String;
     Required: Schema.Attribute.Boolean;
+    RequiredMessage: Schema.Attribute.String;
     Type: Schema.Attribute.Enumeration<
-      ['text', 'email', 'phone number', 'textarea']
+      [
+        'text',
+        'email',
+        'textarea',
+        'phone number',
+        'url',
+        'number',
+        'date',
+        'password',
+        'select',
+      ]
     >;
   };
 }
@@ -304,6 +322,17 @@ export interface SharedLogolink extends Struct.ComponentSchema {
     description: Schema.Attribute.String;
     href: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface SharedOption extends Struct.ComponentSchema {
+  collectionName: 'components_shared_options';
+  info: {
+    displayName: 'Option';
+  };
+  attributes: {
+    Label: Schema.Attribute.String;
+    Value: Schema.Attribute.String;
   };
 }
 
@@ -379,6 +408,7 @@ declare module '@strapi/strapi' {
       'shared.image': SharedImage;
       'shared.link': SharedLink;
       'shared.logolink': SharedLogolink;
+      'shared.option': SharedOption;
       'shared.quicklinks': SharedQuicklinks;
       'shared.service-card': SharedServiceCard;
       'shared.sociallink': SharedSociallink;
