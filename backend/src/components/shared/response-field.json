@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_response_fields",
+  "info": {
+    "displayName": "response-field"
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string"
+    },
+    "APIkey": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

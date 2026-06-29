@@ -4,16 +4,12 @@ import { getService } from "@/lib/getService";
 import BlockRenderer from "../_components/BlockRenderer";
 import ServiceDetail from "../_components/ServiceDetail";
 
-export default async function Page({
-  params,
-}) {
+export default async function Page({ params }) {
   const resolvedParams = await params;
 
-  const slugParts =
-    resolvedParams.slug || [];
+  const slugParts = resolvedParams.slug || [];
 
-  const pageSlug =
-    slugParts.join("/") || "home";
+  const pageSlug = slugParts.join("/") || "home";
 
   // Check normal pages first
   const page = await getPage(pageSlug);
@@ -27,8 +23,6 @@ export default async function Page({
             block={block}
           />
         ))}
-
-        
       </>
     );
   }
@@ -41,15 +35,10 @@ export default async function Page({
   }
 
   if (serviceSlug) {
-    const service =
-      await getService(serviceSlug);
+    const service = await getService(serviceSlug);
 
     if (service) {
-      return (
-        <ServiceDetail
-          service={service}
-        />
-      );
+      return <ServiceDetail service={service} />;
     }
   }
 

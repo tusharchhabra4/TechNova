@@ -39,6 +39,7 @@ export interface BlocksContactForm extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.String;
     formfields: Schema.Attribute.Component<'shared.form-field', true>;
+    formName: Schema.Attribute.String;
     submitButtonText: Schema.Attribute.String;
     successMessage: Schema.Attribute.String;
     title: Schema.Attribute.String;
@@ -166,6 +167,25 @@ export interface BlocksStats extends Struct.ComponentSchema {
     items: Schema.Attribute.Component<'shared.stat-item', true>;
     title: Schema.Attribute.String;
     variants: Schema.Attribute.Enumeration<['Grid', 'Cards', 'Minimal']>;
+  };
+}
+
+export interface BlocksSubmissionList extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_submission_lists';
+  info: {
+    displayName: 'submission-list';
+  };
+  attributes: {
+    CloseButtonText: Schema.Attribute.String;
+    Description: Schema.Attribute.String;
+    EmptyStateMessage: Schema.Attribute.String;
+    InitialVisibleFields: Schema.Attribute.Integer;
+    ModalTitle: Schema.Attribute.String;
+    ResponseFields: Schema.Attribute.Component<'shared.response-field', true>;
+    SearchPlaceholder: Schema.Attribute.String;
+    ShowLessButtonText: Schema.Attribute.String;
+    ShowMoreButtonText: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -347,6 +367,17 @@ export interface SharedQuicklinks extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedResponseField extends Struct.ComponentSchema {
+  collectionName: 'components_shared_response_fields';
+  info: {
+    displayName: 'response-field';
+  };
+  attributes: {
+    APIkey: Schema.Attribute.String;
+    Label: Schema.Attribute.String;
+  };
+}
+
 export interface SharedServiceCard extends Struct.ComponentSchema {
   collectionName: 'components_shared_service_cards';
   info: {
@@ -397,6 +428,7 @@ declare module '@strapi/strapi' {
       'blocks.resource-list': BlocksResourceList;
       'blocks.services': BlocksServices;
       'blocks.stats': BlocksStats;
+      'blocks.submission-list': BlocksSubmissionList;
       'global.footer': GlobalFooter;
       'global.navbar': GlobalNavbar;
       'shared.button': SharedButton;
@@ -410,6 +442,7 @@ declare module '@strapi/strapi' {
       'shared.logolink': SharedLogolink;
       'shared.option': SharedOption;
       'shared.quicklinks': SharedQuicklinks;
+      'shared.response-field': SharedResponseField;
       'shared.service-card': SharedServiceCard;
       'shared.sociallink': SharedSociallink;
       'shared.stat-item': SharedStatItem;

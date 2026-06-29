@@ -6,8 +6,10 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Schema } from "@/lib/validation/Schema";
+import { submitContact } from "@/actions/contact";
 
 export default function ContactForm({
+  formName,
   formFields,
   successMessage,
   submitButtonText,
@@ -15,6 +17,8 @@ export default function ContactForm({
   const [loading, setLoading] = useState(false);
 
   const [success, setSuccess] = useState(false);
+
+  const [serverMessage, setServerMessage] = useState("");
 
   const schema = Schema(formFields || []);
 
@@ -30,19 +34,34 @@ export default function ContactForm({
   async function onSubmit(data) {
     setLoading(true);
     setSuccess(false);
+    setServerMessage("");
 
     try {
-      console.log("Form Data:", data);
+      const result = await submitContact({
+        formName,
+        data,
+      });
+
+      if (!result.success) {
+        setSuccess(false);
+        setServerMessage(result.message);
+        return;
+      }
 
       setSuccess(true);
+
+      setServerMessage(successMessage || "Form submitted successfully.");
 
       reset();
 
       setTimeout(() => {
         setSuccess(false);
+        setServerMessage("");
       }, 3000);
     } catch (error) {
       console.error(error);
+
+      setServerMessage("Something went wrong.");
     } finally {
       setLoading(false);
     }
@@ -70,6 +89,7 @@ export default function ContactForm({
         />
       );
     }
+
     if (field.Type === "select") {
       return (
         <select {...register(field.Name)} className={commonClasses}>
@@ -144,9 +164,13 @@ export default function ContactForm({
           {loading ? "Sending..." : submitButtonText || "Send Message"}
         </button>
 
-        {success && (
-          <p className="text-green-600 font-medium">
-            {successMessage || "Message sent successfully!"}
+        {serverMessage && (
+          <p
+            className={`font-medium ${
+              success ? "text-green-600" : "text-red-600"
+            }`}
+          >
+            {serverMessage}
           </p>
         )}
       </form>

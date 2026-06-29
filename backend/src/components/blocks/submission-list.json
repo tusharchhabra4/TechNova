@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_blocks_submission_lists",
+  "info": {
+    "displayName": "submission-list"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "SearchPlaceholder": {
+      "type": "string"
+    },
+    "EmptyStateMessage": {
+      "type": "string"
+    },
+    "InitialVisibleFields": {
+      "type": "integer"
+    },
+    "ResponseFields": {
+      "type": "component",
+      "component": "shared.response-field",
+      "repeatable": true
+    },
+    "ShowLessButtonText": {
+      "type": "string"
+    },
+    "ShowMoreButtonText": {
+      "type": "string"
+    },
+    "ModalTitle": {
+      "type": "string"
+    },
+    "CloseButtonText": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -21,6 +21,9 @@
     },
     "submitButtonText": {
       "type": "string"
+    },
+    "formName": {
+      "type": "string"
     }
   },
   "config": {}

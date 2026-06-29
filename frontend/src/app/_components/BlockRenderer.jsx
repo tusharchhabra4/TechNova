@@ -9,6 +9,7 @@ import BlogList from "./blocks/BlogList";
 import DocumentationList from "./blocks/DocumentationList";
 import CaseStudyList from "./blocks/CaseStudyList";
 import ContactFormBlock from "./blocks/ContactFormBlock";
+import SubmissionListBlock from "./blocks/SubmissionListBlock"
 
 
 const COMPONENTS = {
@@ -23,6 +24,7 @@ const COMPONENTS = {
   "blocks.documentation-list": DocumentationList,
   "blocks.case-study-list": CaseStudyList,
   "blocks.contact-form":ContactFormBlock,
+  "blocks.submission-list":SubmissionListBlock,
 };
 
 export default function BlockRenderer({

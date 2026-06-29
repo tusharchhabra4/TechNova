@@ -31,7 +31,8 @@
         "blocks.documentation-list",
         "blocks.blog-list",
         "blocks.case-study-list",
-        "blocks.contact-form"
+        "blocks.contact-form",
+        "blocks.submission-list"
       ]
     }
   }
