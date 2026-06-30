@@ -183,7 +183,6 @@ export interface BlocksSubmissionList extends Struct.ComponentSchema {
     ModalTitle: Schema.Attribute.String;
     ResponseFields: Schema.Attribute.Component<'shared.response-field', true>;
     SearchPlaceholder: Schema.Attribute.String;
-    ShowLessButtonText: Schema.Attribute.String;
     ShowMoreButtonText: Schema.Attribute.String;
     Title: Schema.Attribute.String;
   };

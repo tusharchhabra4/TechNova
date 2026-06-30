@@ -9,9 +9,7 @@ export default function SubmissionModal({
   if (!submission) return null;
 
   const responseData =
-    submission.data?.data ??
-    submission.data ??
-    {};
+  submission.data;
 
   const formatLabel = (key) =>
     key

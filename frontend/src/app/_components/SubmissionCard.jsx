@@ -14,7 +14,7 @@ export default function SubmissionCard({
 }) {
   const [open, setOpen] = useState(false);
 
-  const responseData = submission.data?.data ?? submission.data ?? {};
+  const responseData = submission.data;
 
   const previewFields = responseFields.slice(0, initialVisibleFields);
 

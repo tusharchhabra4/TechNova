@@ -25,9 +25,6 @@
       "component": "shared.response-field",
       "repeatable": true
     },
-    "ShowLessButtonText": {
-      "type": "string"
-    },
     "ShowMoreButtonText": {
       "type": "string"
     },

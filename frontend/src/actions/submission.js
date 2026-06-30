@@ -35,3 +35,27 @@ export async function getSubmissions() {
     };
   }
 }
+
+export async function searchSubmissions(
+  search
+) {
+  try {
+    const response = await fetch(
+      `${process.env.BASE_URL}/api/public/forms?search=${encodeURIComponent(
+        search
+      )}&page=1&limit=10`,
+      {
+        cache: "no-store",
+      }
+    );
+
+    return await response.json();
+  } catch (error) {
+    console.error(error);
+
+    return {
+      data: [],
+      total: 0,
+    };
+  }
+}
