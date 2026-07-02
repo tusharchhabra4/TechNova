@@ -7,12 +7,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Schema } from "@/lib/validation/Schema";
 import { submitContact } from "@/actions/contact";
+import Button from "./ui/Button";
 
 export default function ContactForm({
   formName,
   formFields,
   successMessage,
-  submitButtonText,
+  button,
 }) {
   const [loading, setLoading] = useState(false);
 
@@ -145,24 +146,9 @@ export default function ContactForm({
 
         {renderFieldGroup(formFields?.filter((field) => !field.HalfWidth))}
 
-        <button
-          type="submit"
-          disabled={loading}
-          className="
-            bg-blue-600
-            hover:bg-blue-700
-            text-white
-            px-8
-            py-4
-            rounded-xl
-            font-medium
-            transition
-            disabled:opacity-50
-            disabled:cursor-not-allowed
-          "
-        >
-          {loading ? "Sending..." : submitButtonText || "Send Message"}
-        </button>
+        <Button data={button} type="submit" disabled={loading}>
+          {loading ? "Sending..." : button.text}
+        </Button>
 
         {serverMessage && (
           <p

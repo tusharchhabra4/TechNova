@@ -17,7 +17,7 @@ export default function ContactFormBlock({ data }) {
             formName={data.formName}
             formFields={data.formfields}
             successMessage={data.successMessage}
-            submitButtonText={data.submitButtonText}
+            button={data.submitButtonText}
           />
         </div>
       </div>

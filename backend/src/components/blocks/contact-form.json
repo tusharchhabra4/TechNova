@@ -19,11 +19,13 @@
     "successMessage": {
       "type": "string"
     },
-    "submitButtonText": {
-      "type": "string"
-    },
     "formName": {
       "type": "string"
+    },
+    "submitButtonText": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
     }
   },
   "config": {}

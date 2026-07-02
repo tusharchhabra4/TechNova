@@ -5,6 +5,8 @@ import SubmissionSearch from "../SubmissionSearch";
 export default async function SubmissionListBlock({ data }) {
   const submissions = await getSubmissions();
 
+  {console.log("submission Data",submissions)}
+
   return (
     <section className="py-16">
       <div className="max-w-7xl mx-auto px-6">

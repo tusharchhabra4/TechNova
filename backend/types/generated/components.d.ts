@@ -40,7 +40,7 @@ export interface BlocksContactForm extends Struct.ComponentSchema {
     description: Schema.Attribute.String;
     formfields: Schema.Attribute.Component<'shared.form-field', true>;
     formName: Schema.Attribute.String;
-    submitButtonText: Schema.Attribute.String;
+    submitButtonText: Schema.Attribute.Component<'shared.button', false>;
     successMessage: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };

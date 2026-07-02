@@ -6,7 +6,7 @@ export async function submitContact({ formName, data }) {
       method: "POST",
 
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "json",
       },
 
       body: JSON.stringify({
@@ -14,7 +14,6 @@ export async function submitContact({ formName, data }) {
         ...data,
       }),
 
-      cache: "no-store",
     });
 
     const result = await response.json();

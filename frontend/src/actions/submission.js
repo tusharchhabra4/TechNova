@@ -3,7 +3,7 @@
 export async function getSubmissions() {
   try {
     const response = await fetch(
-      `${process.env.BASE_URL}/api/public/forms`,
+      `${process.env.BASE_URL}/api/public/forms?page=1&limit=100`,
       {
         method: "GET",
         cache: "no-store",
@@ -28,10 +28,6 @@ export async function getSubmissions() {
 
     return {
       data: [],
-      total: 0,
-      page: 1,
-      limit: 10,
-      pages: 1,
     };
   }
 }
