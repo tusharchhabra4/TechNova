@@ -1,38 +1,32 @@
-import SubmissionSkeleton from "../_components/SubmissionSkeleton";
-
 export default function Loading() {
   return (
-    <section className="py-16">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="flex min-h-[70vh] items-center justify-center px-6">
+      <div className="w-full max-w-md rounded-3xl border border-slate-200 bg-white p-10 text-center shadow-xl">
+        {/* Animated Loader */}
 
-        {/* Header */}
-
-        <div className="flex flex-col gap-6 md:flex-row md:justify-between">
-
-          <div>
-
-            <div className="h-10 w-72 rounded bg-slate-200 animate-pulse" />
-
-            <div className="mt-4 h-5 w-[520px] rounded bg-slate-200 animate-pulse" />
-
-          </div>
-
-          {/* Search */}
-
-          <div className="h-12 w-full md:w-96 rounded-full bg-slate-200 animate-pulse" />
-
+        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-blue-50">
+          <div className="h-12 w-12 animate-spin rounded-full border-4 border-slate-200 border-t-blue-600" />
         </div>
 
-        {/* Cards */}
+        {/* Heading */}
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <h2 className="mt-8 text-2xl font-bold text-slate-900">
+          Loading Page
+        </h2>
 
-          {Array.from({ length: 9 }).map((_, index) => (
-            <SubmissionSkeleton key={index} />
-          ))}
+        {/* Description */}
 
+        <p className="mt-3 text-slate-600">
+          Please wait while we prepare your content.
+        </p>
+
+        {/* Animated Dots */}
+
+        <div className="mt-6 flex justify-center gap-2">
+          <span className="h-2.5 w-2.5 animate-bounce rounded-full bg-blue-600 [animation-delay:-0.3s]" />
+          <span className="h-2.5 w-2.5 animate-bounce rounded-full bg-blue-600 [animation-delay:-0.15s]" />
+          <span className="h-2.5 w-2.5 animate-bounce rounded-full bg-blue-600" />
         </div>
-
       </div>
     </section>
   );

@@ -86,7 +86,7 @@ export default function SubmissionSearch({
 
       {loading ? (
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {Array.from({ length: 6 }).map((_, index) => (
+          {Array.from({ length: 9 }).map((_, index) => (
             <SubmissionSkeleton key={index} />
           ))}
         </div>
