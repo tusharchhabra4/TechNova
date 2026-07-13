@@ -23,6 +23,11 @@
         "Dark",
         "Transparent"
       ]
+    },
+    "userMenu": {
+      "type": "component",
+      "component": "shared.user-menu",
+      "repeatable": false
     }
   },
   "config": {}

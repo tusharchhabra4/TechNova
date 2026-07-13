@@ -4,12 +4,13 @@ import { useState } from "react";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 
 import { Schema } from "@/lib/validation/Schema";
-import { submitContact } from "@/actions/contact";
+import { submitForm } from "@/actions/form";
 import Button from "./ui/Button";
 
-export default function ContactForm({
+export default function DynamicForm({
   formName,
   formFields,
   successMessage,
@@ -22,6 +23,7 @@ export default function ContactForm({
   const [serverMessage, setServerMessage] = useState("");
 
   const schema = Schema(formFields || []);
+  const router = useRouter();
 
   const {
     register,
@@ -38,10 +40,7 @@ export default function ContactForm({
     setServerMessage("");
 
     try {
-      const result = await submitContact({
-        formName,
-        data,
-      });
+      const result = await submitForm(formName, data);
 
       if (!result.success) {
         setSuccess(false);
@@ -51,9 +50,20 @@ export default function ContactForm({
 
       setSuccess(true);
 
-      setServerMessage(successMessage || "Form submitted successfully.");
+      setServerMessage(
+        result.message || successMessage || "Form submitted successfully.",
+      );
 
       reset();
+
+      if (result.redirectTo) {
+        setTimeout(() => {
+          router.push(result.redirectTo);
+          router.refresh();
+        }, 1000);
+
+        return;
+      }
 
       setTimeout(() => {
         setSuccess(false);

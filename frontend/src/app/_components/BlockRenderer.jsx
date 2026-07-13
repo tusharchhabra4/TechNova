@@ -8,8 +8,9 @@ import ResourceList from "./blocks/ResourceList";
 import BlogList from "./blocks/BlogList";
 import DocumentationList from "./blocks/DocumentationList";
 import CaseStudyList from "./blocks/CaseStudyList";
-import ContactFormBlock from "./blocks/ContactFormBlock";
-import SubmissionListBlock from "./blocks/SubmissionListBlock"
+import DynamicFormBlock from "./blocks/DynamicFormBlock";
+import SubmissionListBlock from "./blocks/SubmissionListBlock";
+import ProfileBlock from "./blocks/ProfileBlock";
 
 
 const COMPONENTS = {
@@ -23,22 +24,17 @@ const COMPONENTS = {
   "blocks.blog-list": BlogList,
   "blocks.documentation-list": DocumentationList,
   "blocks.case-study-list": CaseStudyList,
-  "blocks.contact-form":ContactFormBlock,
-  "blocks.submission-list":SubmissionListBlock,
+  "blocks.contact-form": DynamicFormBlock,
+  "blocks.submission-list": SubmissionListBlock,
+  "blocks.profile": ProfileBlock,
+
 };
 
-export default function BlockRenderer({
-  block,
-}) {
-  const Component =
-    COMPONENTS[block.__component];
+export default function BlockRenderer({ block }) {
+  const Component = COMPONENTS[block.__component];
 
   if (!Component) {
-    console.log(
-      "Missing Component:",
-      block.__component
-    );
-
+    console.log("Missing Component:", block.__component);
     return null;
   }
 

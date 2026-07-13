@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_stat_cards",
+  "info": {
+    "displayName": "stat-card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "href": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "component",
+      "component": "shared.image",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

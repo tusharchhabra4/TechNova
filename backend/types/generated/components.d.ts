@@ -34,7 +34,7 @@ export interface BlocksCaseStudyList extends Struct.ComponentSchema {
 export interface BlocksContactForm extends Struct.ComponentSchema {
   collectionName: 'components_blocks_contact_forms';
   info: {
-    displayName: 'contact-form';
+    displayName: 'form';
   };
   attributes: {
     description: Schema.Attribute.String;
@@ -128,6 +128,24 @@ export interface BlocksHero extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksProfile extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_profiles';
+  info: {
+    displayName: 'profile';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    description: Schema.Attribute.RichText;
+    joinedDate: Schema.Attribute.String;
+    ShowAvatar: Schema.Attribute.Boolean;
+    ShowJoinedDate: Schema.Attribute.Boolean;
+    Statcard: Schema.Attribute.Component<'shared.stat-card', true>;
+    stathead: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    userinfoHeading: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksResourceList extends Struct.ComponentSchema {
   collectionName: 'components_blocks_resource_lists';
   info: {
@@ -210,6 +228,7 @@ export interface GlobalNavbar extends Struct.ComponentSchema {
   attributes: {
     logo: Schema.Attribute.Component<'shared.logolink', false>;
     navitem: Schema.Attribute.Component<'shared.link', true>;
+    userMenu: Schema.Attribute.Component<'shared.user-menu', false>;
     variants: Schema.Attribute.Enumeration<
       ['Default', 'Glass', 'Dark', 'Transparent']
     >;
@@ -401,6 +420,19 @@ export interface SharedSociallink extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedStatCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_stat_cards';
+  info: {
+    displayName: 'stat-card';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    href: Schema.Attribute.String;
+    icon: Schema.Attribute.Component<'shared.image', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedStatItem extends Struct.ComponentSchema {
   collectionName: 'components_shared_stat_items';
   info: {
@@ -410,6 +442,20 @@ export interface SharedStatItem extends Struct.ComponentSchema {
     description: Schema.Attribute.String;
     label: Schema.Attribute.String;
     number: Schema.Attribute.String;
+  };
+}
+
+export interface SharedUserMenu extends Struct.ComponentSchema {
+  collectionName: 'components_shared_user_menus';
+  info: {
+    displayName: 'user-menu';
+  };
+  attributes: {
+    authenticatedLinks: Schema.Attribute.Component<'shared.link', true>;
+    avatarLabel: Schema.Attribute.String;
+    guestLinks: Schema.Attribute.Component<'shared.link', true>;
+    showAvatar: Schema.Attribute.Boolean;
+    showUsername: Schema.Attribute.Boolean;
   };
 }
 
@@ -424,6 +470,7 @@ declare module '@strapi/strapi' {
       'blocks.documentation-list': BlocksDocumentationList;
       'blocks.faq': BlocksFaq;
       'blocks.hero': BlocksHero;
+      'blocks.profile': BlocksProfile;
       'blocks.resource-list': BlocksResourceList;
       'blocks.services': BlocksServices;
       'blocks.stats': BlocksStats;
@@ -444,7 +491,9 @@ declare module '@strapi/strapi' {
       'shared.response-field': SharedResponseField;
       'shared.service-card': SharedServiceCard;
       'shared.sociallink': SharedSociallink;
+      'shared.stat-card': SharedStatCard;
       'shared.stat-item': SharedStatItem;
+      'shared.user-menu': SharedUserMenu;
     }
   }
 }

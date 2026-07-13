@@ -1,3 +1,4 @@
+import Link from "next/link";
 import DynamicImage from "../ui/DynamicImage";
 
 export default function ResourceList({ data }) {
@@ -22,9 +23,10 @@ export default function ResourceList({ data }) {
 
             <div className="mt-16 space-y-6">
               {data.resources?.map((resource) => (
-                <div
+                <Link
                   key={resource.id}
-                  className="border rounded-2xl p-6"
+                  href={`/${resource.slug}`}
+                  className="block border rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 >
                   <h3 className="text-2xl font-semibold">
                     {resource.title}
@@ -37,7 +39,7 @@ export default function ResourceList({ data }) {
                   <p className="mt-4 text-slate-600">
                     {resource.description}
                   </p>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -65,23 +67,23 @@ export default function ResourceList({ data }) {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
               {data.resources?.map((resource) => (
-                <div
+                <Link
                   key={resource.id}
+                  href={`/${resource.slug}`}
                   className="
+                    block
                     border
                     rounded-2xl
                     overflow-hidden
-                    hover:shadow-xl
                     transition-all
+                    duration-300
+                    hover:-translate-y-2
+                    hover:shadow-2xl
                   "
                 >
-                  {resource.featuredImage && (
+                  {resource.image && (
                     <DynamicImage
-                      data={{
-                        image: resource.featuredImage,
-                        alt: resource.title,
-                        variants: "Card",
-                      }}
+                      data={resource.image}
                     />
                   )}
 
@@ -109,7 +111,7 @@ export default function ResourceList({ data }) {
                       {resource.description}
                     </p>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

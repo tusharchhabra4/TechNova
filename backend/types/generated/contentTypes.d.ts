@@ -628,6 +628,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'blocks.case-study-list',
         'blocks.contact-form',
         'blocks.submission-list',
+        'blocks.profile',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

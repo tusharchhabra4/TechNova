@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_user_menus",
+  "info": {
+    "displayName": "user-menu"
+  },
+  "options": {},
+  "attributes": {
+    "avatarLabel": {
+      "type": "string"
+    },
+    "guestLinks": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    },
+    "authenticatedLinks": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    },
+    "showUsername": {
+      "type": "boolean"
+    },
+    "showAvatar": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}

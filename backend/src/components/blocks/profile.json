@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_blocks_profiles",
+  "info": {
+    "displayName": "profile"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "badge": {
+      "type": "string"
+    },
+    "ShowAvatar": {
+      "type": "boolean"
+    },
+    "ShowJoinedDate": {
+      "type": "boolean"
+    },
+    "Statcard": {
+      "type": "component",
+      "component": "shared.stat-card",
+      "repeatable": true
+    },
+    "joinedDate": {
+      "type": "string"
+    },
+    "stathead": {
+      "type": "string"
+    },
+    "userinfoHeading": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

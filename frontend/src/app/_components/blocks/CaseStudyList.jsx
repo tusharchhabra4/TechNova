@@ -1,3 +1,4 @@
+import Link from "next/link";
 import DynamicImage from "../ui/DynamicImage";
 
 export default function CaseStudyList({ data }) {
@@ -6,32 +7,27 @@ export default function CaseStudyList({ data }) {
       return (
         <section className="py-24">
           <div className="max-w-5xl mx-auto px-6">
-            {data.case_studies?.map(
-              (study) => (
-                <div
-                  key={study.id}
-                  className="border-l-4 pl-8 mb-12"
-                >
-                  <h3 className="text-2xl font-bold">
-                    {study.title}
-                  </h3>
+            {data.case_studies?.map((study) => (
+              <Link
+                key={study.id}
+                href={`/${study.slug}`}
+                className="block border-l-4 pl-8 mb-12 transition-all duration-300 hover:border-blue-600 hover:bg-slate-50"
+              >
+                <h3 className="text-2xl font-bold">
+                  {study.title}
+                </h3>
 
-                  <p className="mt-4">
-                    <strong>
-                      Challenge:
-                    </strong>{" "}
-                    {study.challenge}
-                  </p>
+                <p className="mt-4">
+                  <strong>Challenge:</strong>{" "}
+                  {study.challenge}
+                </p>
 
-                  <p className="mt-4">
-                    <strong>
-                      Results:
-                    </strong>{" "}
-                    {study.results}
-                  </p>
-                </div>
-              )
-            )}
+                <p className="mt-4">
+                  <strong>Results:</strong>{" "}
+                  {study.results}
+                </p>
+              </Link>
+            ))}
           </div>
         </section>
       );
@@ -41,33 +37,26 @@ export default function CaseStudyList({ data }) {
         <section className="py-24">
           <div className="max-w-7xl mx-auto px-6">
             {data.case_studies?.[0] && (
-              <div className="border rounded-3xl overflow-hidden">
-                {data.case_studies[0]
-                  .image && (
+              <Link
+                href={`/${data.case_studies[0].slug}`}
+                className="block border rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+              >
+                {data.case_studies[0].image && (
                   <DynamicImage
-                    data={
-                      data.case_studies[0]
-                        .image
-                    }
+                    data={data.case_studies[0].image}
                   />
                 )}
 
                 <div className="p-8">
                   <h3 className="text-3xl font-bold">
-                    {
-                      data.case_studies[0]
-                        .title
-                    }
+                    {data.case_studies[0].title}
                   </h3>
 
                   <p className="mt-4 text-slate-600">
-                    {
-                      data.case_studies[0]
-                        .excerpt
-                    }
+                    {data.case_studies[0].excerpt}
                   </p>
                 </div>
-              </div>
+              </Link>
             )}
           </div>
         </section>
@@ -93,32 +82,38 @@ export default function CaseStudyList({ data }) {
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mt-16">
-              {data.case_studies?.map(
-                (study) => (
-                  <div
-                    key={study.id}
-                    className="border rounded-2xl overflow-hidden"
-                  >
-                    {study.image && (
-                      <DynamicImage
-                        data={
-                          study.image
-                        }
-                      />
-                    )}
+              {data.case_studies?.map((study) => (
+                <Link
+                  key={study.id}
+                  href={`/${study.slug}`}
+                  className="
+                    block
+                    border
+                    rounded-2xl
+                    overflow-hidden
+                    transition-all
+                    duration-300
+                    hover:-translate-y-2
+                    hover:shadow-2xl
+                  "
+                >
+                  {study.image && (
+                    <DynamicImage
+                      data={study.image}
+                    />
+                  )}
 
-                    <div className="p-6">
-                      <h3 className="text-xl font-semibold">
-                        {study.title}
-                      </h3>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold">
+                      {study.title}
+                    </h3>
 
-                      <p className="mt-3 text-slate-600">
-                        {study.excerpt}
-                      </p>
-                    </div>
+                    <p className="mt-3 text-slate-600">
+                      {study.excerpt}
+                    </p>
                   </div>
-                )
-              )}
+                </Link>
+              ))}
             </div>
           </div>
         </section>

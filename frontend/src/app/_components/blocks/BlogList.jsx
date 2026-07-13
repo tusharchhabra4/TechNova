@@ -1,3 +1,4 @@
+import Link from "next/link";
 import DynamicImage from "../ui/DynamicImage";
 
 export default function BlogList({ data }) {
@@ -12,9 +13,10 @@ export default function BlogList({ data }) {
 
             <div className="mt-12 space-y-6">
               {data.blogs?.map((blog) => (
-                <div
+                <Link
                   key={blog.id}
-                  className="border-b pb-4"
+                  href={`/${blog.slug}`}
+                  className="block border-b pb-4 transition-colors hover:text-blue-600"
                 >
                   <h3 className="text-xl font-semibold">
                     {blog.title}
@@ -23,7 +25,7 @@ export default function BlogList({ data }) {
                   <p className="text-slate-600 mt-2">
                     {blog.excerpt}
                   </p>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -35,7 +37,10 @@ export default function BlogList({ data }) {
         <section className="py-24">
           <div className="max-w-7xl mx-auto px-6">
             {data.blogs?.[0] && (
-              <div className="border rounded-3xl overflow-hidden">
+              <Link
+                href={`/${data.blogs[0].slug}`}
+                className="block border rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+              >
                 {data.blogs[0].image && (
                   <DynamicImage
                     data={data.blogs[0].image}
@@ -51,7 +56,7 @@ export default function BlogList({ data }) {
                     {data.blogs[0].excerpt}
                   </p>
                 </div>
-              </div>
+              </Link>
             )}
           </div>
         </section>
@@ -78,9 +83,10 @@ export default function BlogList({ data }) {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
               {data.blogs?.map((blog) => (
-                <div
+                <Link
                   key={blog.id}
-                  className="border rounded-2xl overflow-hidden"
+                  href={`/${blog.slug}`}
+                  className="block border rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
                 >
                   {blog.image && (
                     <DynamicImage
@@ -101,7 +107,7 @@ export default function BlogList({ data }) {
                       {blog.author}
                     </p>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

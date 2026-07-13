@@ -3,19 +3,18 @@ const API_URL =
   "http://localhost:1337";
 
 export async function fetchAPI(path) {
-  const response = await fetch(
-    `${API_URL}${path}`,
-    {
-      next: {
-        revalidate: 10,
-      },
-    }
-  );
+  const response = await fetch(`${API_URL}${path}`, {
+    next: {
+      revalidate: 10,
+    },
+  });
+
+  if (response.status === 404) {
+    return null;
+  }
 
   if (!response.ok) {
-    throw new Error(
-      "Failed to fetch data"
-    );
+    throw new Error("Failed to fetch data");
   }
 
   return response.json();

@@ -1,6 +1,6 @@
-import ContactForm from "../ContactForm";
+import DynamicForm from "../DynamicForm";
 
-export default function ContactFormBlock({ data }) {
+export default function DynamicFormBlock({ data }) {
   return (
     <section className="py-14">
       <div className="max-w-4xl mx-auto px-6">
@@ -13,7 +13,7 @@ export default function ContactFormBlock({ data }) {
         )}
 
         <div className="mt-12">
-          <ContactForm
+          <DynamicForm
             formName={data.formName}
             formFields={data.formfields}
             successMessage={data.successMessage}
