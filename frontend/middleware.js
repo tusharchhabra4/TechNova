@@ -6,13 +6,13 @@ export function middleware(request) {
   const { pathname } = request.nextUrl;
 
   const protectedRoutes = ["/profile"];
-  const authRoutes = ["/login", "/register", "/forgot-password"];
+  const authRoutes = ["/login", "/register"];
 
   if (
     protectedRoutes.some((route) => pathname.startsWith(route)) &&
     !jwt
   ) {
-    console.log("➡ Redirect to LOGIN");
+    console.log("Redirect to LOGIN");
     return NextResponse.redirect(new URL("/login", request.url));
   }
 
@@ -20,11 +20,11 @@ export function middleware(request) {
     authRoutes.some((route) => pathname.startsWith(route)) &&
     jwt
   ) {
-    console.log("➡ Redirect to PROFILE");
+    console.log("Redirect to PROFILE");
     return NextResponse.redirect(new URL("/profile", request.url));
   }
 
-  console.log("➡ Continue");
+  console.log("Continue");
 
   return NextResponse.next();
 }
@@ -34,6 +34,5 @@ export const config = {
     "/profile/:path*",
     "/login",
     "/register",
-    "/forgot-password",
   ],
 };
